@@ -1,38 +1,40 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+const PORT = 3000;
+
 app.use(express.json());
+app.use(express.static("public")); // 👈 serve UI
 
 let todos = [];
-let nextId = 1;
+let idCounter = 1;
 
-// GET all todos
-app.get('/todos', (req, res) => {
-  res.json(todos);
+// Routes (same as before)
+app.get("/todos", (req, res) => res.json(todos));
+
+app.post("/todos", (req, res) => {
+  const { title } = req.body;
+  if (!title) return res.status(400).json({ message: "Title required" });
+
+  const newTodo = { id: idCounter++, title, completed: false };
+  todos.push(newTodo);
+  res.status(201).json(newTodo);
 });
 
-// POST create a todo
-app.post('/todos', (req, res) => {
-  const { text } = req.body;
-  if (!text) return res.status(400).json({ error: 'text is required' });
-  const todo = { id: nextId++, text, done: false };
-  todos.push(todo);
-  res.status(201).json(todo);
-});
-
-// PATCH toggle done
-app.patch('/todos/:id', (req, res) => {
+app.put("/todos/:id", (req, res) => {
   const todo = todos.find(t => t.id === parseInt(req.params.id));
-  if (!todo) return res.status(404).json({ error: 'not found' });
-  todo.done = !todo.done;
+  if (!todo) return res.status(404).json({ message: "Not found" });
+
+  const { completed } = req.body;
+  if (completed !== undefined) todo.completed = completed;
+
   res.json(todo);
 });
 
-// DELETE a todo
-app.delete('/todos/:id', (req, res) => {
-  const idx = todos.findIndex(t => t.id === parseInt(req.params.id));
-  if (idx === -1) return res.status(404).json({ error: 'not found' });
-  todos.splice(idx, 1);
-  res.status(204).send();
+app.delete("/todos/:id", (req, res) => {
+  todos = todos.filter(t => t.id !== parseInt(req.params.id));
+  res.json({ message: "Deleted" });
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
