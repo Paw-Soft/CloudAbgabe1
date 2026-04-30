@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My ToDo-List</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <input type="text" name="textInput" id="textInput" placeholder="ToDo-Name" required>
+                <input type="text" name="createdInput" id="createdInput" placeholder="YYYY-MM-DD">
+                <input type="text" name="deadlineInput" id="deadlineInput" placeholder="YYYY-MM-DD">
+                <input type="text" name="priorityInput" id="priorityInput" placeholder="Priority 1-3">
+                <button type="button" onclick="submitToDoFn()" class="addBtn">Add</button>
+                <button type="button" onclick="saveToDoListFn()" class="saveToDoBtn">Save</button>
+                <hr>
+                <input type="text" name="filterPriorityInput" id="filterPriorityInput" placeholder="Filter by Priority">
+                <button type="button" onclick="filterToDosFn()">Submit</button>
+                <hr>
+                <select name="sortSelect" id="sortSelect">
+                    <option value="deadline">Deadline</option>
+                    <option value="priority">Priority<Priority</option>
+                    <option value="created">Created</option>
+                </select>
+                <button type="button" onclick="sortToDos()">Sort</button>
+                <hr>
+                <button type="button" onclick="clearFn()">Clear</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <table class="col-12">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Created</th>
+                    <th>Deadline</th>
+                    <th>Priority</th>
+                    <th> </th>
+                </tr>
+            </thead>
+
+            <tbody id="toDoList">
+            </tbody>
+
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
