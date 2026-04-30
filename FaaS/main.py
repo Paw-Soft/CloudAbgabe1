@@ -1,0 +1,1 @@
+def hello_http(request): return "test python Cloud Function!"
