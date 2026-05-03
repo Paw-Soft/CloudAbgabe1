@@ -61,7 +61,7 @@ gcloud app browse
 cd Faas
 
 Node.js Function:
-gcloud functions deploy helloHttp \ --runtime nodejs22 \ --trigger-http \ --allow-unauthenticated
+gcloud functions deploy helloHttp --runtime nodejs22 --trigger-http --allow-unauthenticated
 
 Python Function:
-gcloud functions deploy hello_http \ --runtime python311 \ --trigger-http \ --allow-unauthenticated
+gcloud functions deploy hello_http --runtime python311 --trigger-http --allow-unauthenticated
