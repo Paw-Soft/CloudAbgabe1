@@ -1,6 +1,12 @@
-## Schritt 1: Google Cloud einrichten
+# Abgabe 1
+**Team:** Robert Seeger, Dominik Braungardt, My Khanh Phan, Tran Nha-Dan Tran
 
-Das ist die Grundlage für alles andere.[^1]
+**Repository:** https://github.com/Paw-Soft/CloudAbgabe1
+
+
+## 1: Google Cloud einrichten
+
+Das ist die Grundlage für alles andere.
 
 1. Google-Account erstellen und auf [console.cloud.google.com](https://console.cloud.google.com) einloggen
 2. Ein neues **Google Cloud Projekt** anlegen (z. B. `my-first-project`)
@@ -10,7 +16,7 @@ Das ist die Grundlage für alles andere.[^1]
 6. Im Terminal ausführen: `gcloud init` und mit deinem Account verbinden
 7. Ein **Dienstkonto (Service Account)** mit minimalen Rechten anlegen (IAM → Dienstkonten)
 
-## Schritt 2: IaaS – Virtuelle Maschine (Compute Engine)
+## 2: IaaS – Virtuelle Maschine (Compute Engine)
 
 Hier machen wir alles selbst — wie ein echter Server-Admin.
 
@@ -27,7 +33,7 @@ Hier machen wir alles selbst — wie ein echter Server-Admin.
 
 ***
 
-## Schritt 3: PaaS – Google App Engine
+## 3: PaaS – Google App Engine
 
 Hier gibst du Server-Verwaltung ab und deployst nur noch Code.[^1]
 
@@ -44,7 +50,7 @@ runtime: nodejs20
 
 ***
 
-## Schritt 4: FaaS – Google Cloud Functions
+## 4: FaaS – Google Cloud Functions
 
 Jetzt schreibst du nur noch einzelne Funktionen, keinen ganzen Server.
 
@@ -69,7 +75,7 @@ def hello_world(request):
 
 ***
 
-## Schritt 5: Container – Docker, GKE \& Cloud Run
+## 5: Container – Docker, GKE \& Cloud Run
 
 Hier verpackst du deine App portabel und deployest sie auf zwei Arten.[^1]
 
