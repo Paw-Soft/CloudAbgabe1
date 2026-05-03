@@ -65,3 +65,8 @@ gcloud functions deploy helloHttp --runtime nodejs22 --trigger-http --allow-unau
 
 Python Function:
 gcloud functions deploy hello_http --runtime python311 --trigger-http --allow-unauthenticated
+
+Docker
+gcloud builds submit --tag gcr.io/project-5275880f-46b8-4881-876/my-app
+gcloud container clusters create my-cluster --zone europe-west3-a
+kubectl create deployment my-app --image=gcr.io/project-5275880f-46b8-4881-876/my-app
