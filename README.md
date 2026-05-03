@@ -29,13 +29,13 @@ Hier machen wir alles selbst — wie ein echter Server-Admin.
 7. Deine einfache Web-App hochladen und starten: `node app.js`
 8. Die externe IP-Adresse der VM im Browser aufrufen — fertig!
 
-> 💡 **Lernziel:** Du siehst, wie viel manueller Aufwand nötig ist: Betriebssystem, Software, Netzwerk — alles deine Verantwortung.
+> 💡 **Lernziel:** Wir sehen, wie viel manueller Aufwand nötig ist: Betriebssystem, Software, Netzwerk — alles deine Verantwortung.
 
 ***
 
 ## 3: PaaS – Google App Engine
 
-Hier gibst du Server-Verwaltung ab und deployst nur noch Code.[^1]
+Hier geben wir die Server-Verwaltung ab und deployen nur noch Code.
 
 1. Eine `app.yaml` Datei im Projektordner erstellen:
 ```yaml
@@ -46,13 +46,13 @@ runtime: nodejs20
 3. App aufrufen: `gcloud app browse`
 4. Wiederhole das Deployment einmal über die **Cloud Shell** (Browser-Terminal in Google Cloud) und einmal lokal
 
-> 💡 **Lernziel:** Du merkst, dass du kein Betriebssystem mehr kennst — App Engine skaliert automatisch und du bezahlst nur was du nutzt.
+> 💡 **Lernziel:** Wir merken, dass wir kein Betriebssystem mehr brauchen — App Engine skaliert automatisch und wir bezahlen nur was wir nutzen.
 
 ***
 
 ## 4: FaaS – Google Cloud Functions
 
-Jetzt schreibst du nur noch einzelne Funktionen, keinen ganzen Server.
+Jetzt schreiben wir nur noch einzelne Funktionen, keinen ganzen Server.
 
 1. Erstelle eine einfache HTTP-Funktion in **Node.js**:
 ```javascript
@@ -71,13 +71,13 @@ def hello_world(request):
 
 5. Deployen mit `--runtime python312`
 
-> 💡 **Lernziel:** Du verstehst Serverless — keine Infrastruktur, kein dauerhafter Server, Bezahlung nur per Ausführung (Millisekunden-genau).
+> 💡 **Lernziel:** Wir verstehen Serverless — keine Infrastruktur, kein dauerhafter Server, Bezahlung nur per Ausführung (Millisekunden-genau).
 
 ***
 
 ## 5: Container – Docker, GKE \& Cloud Run
 
-Hier verpackst du deine App portabel und deployest sie auf zwei Arten.[^1]
+Hier wir die App portabel und deployen sie auf zwei Arten.[^1]
 
 **5a: Docker-Image bauen**
 
@@ -104,7 +104,7 @@ EXPOSE 8080
 
 1. `gcloud run deploy meine-app --image gcr.io/project-5275880f-46b8-4881-876/my-app --platform managed --region europe-west3 --allow-unauthenticated`
 
-> 💡 **Lernziel:** Du verstehst den Unterschied zwischen **GKE** (volle Kontrolle über Cluster, komplex) und **Cloud Run** (serverless Container, einfacher) — Container selbst sind aber immer gleich portabel.
+> 💡 **Lernziel:** Wir verstehen den Unterschied zwischen **GKE** (volle Kontrolle über Cluster, komplex) und **Cloud Run** (serverless Container, einfacher) — Container selbst sind aber immer gleich portabel.
 
 ***
 
